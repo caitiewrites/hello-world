@@ -1,3 +1,12 @@
 #!/bin/bash
 
-echo "Hello World!"
+name="$@"
+say_hello() {
+echo "Hello $1!"
+}
+
+if [[ -n $name ]] ; then
+  say_hello "$name"
+else
+  say_hello "World"
+fi
